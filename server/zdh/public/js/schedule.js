@@ -1,0 +1,78 @@
+//
+$().ready(function(){
+    //添加日程
+    $("#submit-btn").click(function(){
+        var days=$("#days").val();
+        var content=$("#concent").val();
+        var dan=$("#dan").val();
+        $.ajax({
+            url:'/adminschedule/addschedule',
+            data:{
+                days:days,
+                content:content,
+                dan:dan
+            },
+            success:function(data){
+                if(data){
+                    alert(data.msg)
+                }
+            }
+        })
+    }),
+    //查询日程根据时间
+    $("#schedule-btn").click(function(){
+        $.ajax({
+            url:"/adminschedule/selectschedule",
+            success:function(data){
+                alert(JSON.stringify(data))
+            }
+        })
+    }),
+    //删除整天日程
+    $("#dellschedule-btn").click(function(){
+        $.ajax({
+            url:"/adminschedule/dellschedule",
+            success:function(data){
+                if(data){
+                    alert(data.msg)
+                }else{
+                    alert(Error)
+                }
+            }
+        })
+    }),
+    //根据时间段id删除对应日程
+    $("#dellstimechedule-btn").click(function(){
+        $.ajax({
+            url:"/adminschedule/delltimeId",
+            success:function(data){
+                if(data){
+                    alert(data.msg)
+                }else{
+                    alert(Error)
+                }
+            }
+        })
+    }),
+    //根据时间段id修改时间段内容
+    $("#updatadan-btn").click(function(){
+        var ID =$("#timeID").val();
+        var dan=$("#dans").val();
+        var concent=$("#concents").val();
+        $.ajax({
+            url:"/adminschedule/updatadaninfo",
+            data:{
+               ID:ID,
+               dan:dan,
+               concent:concent
+            },
+            success:function(data){
+                if(data){
+                    alert(data.msg)
+                }else{
+                    alert(Error)
+                }
+            }
+        })
+    })
+})

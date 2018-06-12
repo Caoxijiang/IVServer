@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+{% extends '../layout.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>{% block title %}登录成功 {% endblock %}</title>
+</head>
+{% block content %}
+<body>
+        <!-- multiple(多文件上传) -->
+        <!-- <input type="file" multiple id="inputs"/> 
+        <div id='dd'></div>
+        <script>
+        $(document).ready(function () {
+        $("#inputs").change(function () {
+        var fil = this.files;
+        for (var i = 0; i < fil.length; i++) {
+        reads(fil[i]);
+        }
+        });
+        });
+        function reads(fil){
+        var reader = new FileReader();
+        reader.readAsDataURL(fil);
+        reader.onload = function()
+        {
+        document.getElementById("dd").innerHTML += "<img src='"+reader.result+"'>";
+        };
+        }
+        </script> -->
+
+        <form id="uploadForm"  method="post" enctype="multipart/form-data">
+            <input type="file" id="fileId" name="image" value="请上传会议图片" />
+            <input type="hidden" id="hiddId" name="id" value="1"/>
+            <div id="div_username"><input type="text" name="topic" id="topic" class="text_field" placeholder="请输入会议标题"/></div>
+            <div id="div_password"><input type="text" name="Summary" id="Summary" class="text_field" placeholder="请输入会议摘要"/></div> 
+            <div id="data"><input  type="text" name="datetimeStart" id="datetimeStart" readonly class="form_datetime" placeholder="会议时间 ：yyyy-mm-dd"></div>      
+            <input type="button" id="submit" value="上传"/>
+            <script type="text/javascript" src="../../public/js/upload.js"></script>
+           
+           <!-- {% include  '../../public/js/upload.js' %} -->
+           <script>
+               $().ready(function(){
+                $('#datetimeStart').datetimepicker({
+                    language: 'zh-CN',//显示中文
+                    format: 'yyyy-mm-dd',//显示格式
+                    minView: "month",//设置只显示到月份
+                    initialDate: new Date(),//初始化当前日期
+                    autoclose: true,//选中自动关闭
+                    todayBtn: true//显示今日按钮
+                    })
+               })
+           </script>
+        </form>
+        <!-- <script type="text/javascript" src="../../public/js/selectmeetinfoList.js"></script> -->
+        <!-- <script>
+            $.getScript("../../public/js/selectmeetinfoList.js")
+        </script>
+        <script type="text/javascript" src="../../public/js/carousel.js"></script>
+        <script src="../../public/js/Introduction.js"></script>
+        <script src="../../public/js/deletemeeting.js"></script>
+        <script src="../../public/js/guests.js"></script>
+        <script src="../../public/js/schedule.js"></script>
+        <script src="../../public/js/cputil.js"></script>
+        <script src="../../public/js/contact.js"></script> -->
+        <div>
+            <input type="button" id="test1" value="查询会议信息"/>
+        </div>
+        <div>
+                <form id="uploadForms"  method="post" enctype="multipart/form-data">
+                    <input type="file" id="fileIds" name="image2" value="上传轮播"/>
+                    <input type="button" id="submits" value="上传"/>
+                    <input type="button" id="selectsubmits" value="查询"/>
+                    <input type="button" id="dellsubmits" value="删除"/>
+                </form>
+        </div>
+        <div>
+            <form>
+            <input type="text" name="topic" id="Introductiontopic" class="text_field" placeholder="请输入大会简介标题"/>
+            <input type="text" name="topic" id="Introductiontime" class="text_field" placeholder="请输入大会简介时间"/>
+            <input type="text" name="topic" id="Introductionaddress" class="text_field" placeholder="请输入大会简介地点"/>
+            <input type="text" name="topic" id="Introductionmoney" class="text_field" placeholder="请输入大会费用"/>
+            <input type="text" name="topic" id="Introduction" class="text_field" placeholder="请输入大会介绍"/>
+            <input type="button" id="submit2" value="上传"/>
+        </form>
+        </div>
+
+
+        <div id="select"> 
+        </div>
+        <div>
+                <input type="button" id="delete" value="DELETE Click Me"/>
+        </div>
+
+
+        <div>
+            <form id="GuestsuploadForm"  method="post" enctype="multipart/form-data">
+                <input type="file" id="fileIdss" name="image3" value="上传嘉宾图片"/>
+                <input type="text" name="name" id="name" class="text_field" placeholder="姓名"/>
+                <input type="text" name="job" id="job" class="text_field" placeholder="职务"/>
+                <input type="text" name="status" id="status" class="text_field" placeholder="状态"/>
+                <input type="button" id="submit3" value="上传"/>
+                <input type="button" id="selectguests" value="查询"/>
+                
+            </form>
+        </div>
+        <form>
+            <input type="text" name="days" id="days" class="text_field" placeholder="时间"/>
+            <input type="text" name="topic" id="dan" class="text_field" placeholder="时间段"/>
+            <input type="text" name="topic" id="concent" class="text_field" placeholder="内容"/>   
+            <input type="button" id="submit-btn" value="上传"/>
+        </form>
+
+        <div>
+            <input type="button" id="schedule-btn" value="查询日程"/>
+            <input type="button" id="dellschedule-btn" value="删除整日日程"/>
+            <input type="button" id="dellstimechedule-btn" value="删除某个时间段"/>
+        </div>
+
+        <div>
+            <input type="text" name="days" id="timeID" class="text_field" placeholder="时间"/>
+            <input type="text" name="topic" id="dans" class="text_field" placeholder="时间段"/>
+            <input type="text" name="topic" id="concents" class="text_field" placeholder="内容"/>  
+            <input type="button" id="updatadan-btn" value="修改时间段内容"/>
+        </div>
+
+        <div>
+            <form id="CputiluploadForm"  method="post" enctype="multipart/form-data">
+                <input type="file" id="cpfileId" name="cpimage" value="上传合作单位图片"/>
+                <input type="text" name="cpname" id="cpname" class="text_field" placeholder="名字"/>
+                <input type="text" name="cptype" id="cptype" class="text_field" placeholder="类型"/>
+                <input type="button" id="cpsubmit" value="上传"/>
+                <input type="button" id="cpselect" value="查询"/>
+                <input type="button" id="cpdell" value="删除"/>
+            </form>
+        </div>
+
+
+        <div>
+            <form id="CtuploadForm"  method="post" enctype="multipart/form-data">
+                <input type="file" id="ctfileId1" name="ctavatarUrl" value="头像"/>
+                <input type="file" id="ctfileId2" name="ctQrurl" value="二维码"/>
+                <input type="text" name="ctname" id="ctname" class="text_field" placeholder="名字"/>
+                <input type="text" name="ctChJname" id="ctChJname" class="text_field" placeholder="中文职位"/>
+                <input type="text" name="ctUnJname" id="ctUnJname" class="text_field" placeholder="英文职位"/>
+                <input type="text" name="ctphone" id="ctphone" class="text_field" placeholder="手机号"/>
+                <input type="text" name="ctemail" id="ctemail" class="text_field" placeholder="邮箱"/>
+                <input type="text" name="ctwxnum" id="ctwxnum" class="text_field" placeholder="微信号  "/>
+                <input type="button" id="ctsubmit" value="上传"/>
+                <input type="button" id="ctfsubmit" value="查询"/>
+                <input type="button" id="dellct" value="删除"/>
+            </form>
+        </div>
+        <div >
+            <input type="button" id="addcomm" value="强力推荐上传"/>
+            <input type="button" id="selectcomm" value="强力推荐获取"/>
+            <input type="button" id="dellcomm" value="强力推荐删除"/>
+        </div>
+
+</body>
+{% endblock %}
+</html>

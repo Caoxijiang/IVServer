@@ -1,0 +1,85 @@
+.nav-last{
+    border-radius: 8px;
+     background: #ffffff;
+     width:200px;
+     height: 39px;
+     color: #000;
+ }
+ .ipt-search{
+     border-radius: 8px;
+     border:none;
+     width:150px;
+     height: 37px;
+     float: left;
+ }
+ .search-btn{
+     border:none;
+     float: left;
+     border-radius: 8px;
+ }
+ .main-right{
+     width:80%;
+     height:auto;
+     background: #ffffff;
+     border-radius: 4px;
+     margin: 0 auto;
+ }
+ .news-title{
+     width:100%;
+     height:40px;
+     border-bottom:3px solid #f3f4f6;
+ }
+ .news-content{
+     /* overflow: hidden; */
+     padding: 30px;
+     width:80%;
+     margin:0 auto;
+ }
+ .ipt-title{
+     margin: 28px 42px;
+     width:580px;
+     height: 30px;
+ }
+ .news-title h2{
+     margin: 15px;
+     font-weight: bold;
+     width:125px;
+     height: 39px;
+     border-bottom:3px solid #0ba29b;
+     color: #0ba29b;
+ }
+ .news-textarea {
+     
+    margin: 10px 42px;
+     padding: 30px;
+     width:580px;
+     height:288px;
+     resize:none;
+ }
+ .news-btn button {
+     margin-top: 10px;
+     margin-right: 15px;
+ }
+ .news-upImg{
+     width:580px;
+     height: 300px;
+ }
+.metting img{
+  width: 100px;
+  height: 100px;
+}
+.date-style{
+    
+}
+.news-btn{
+    margin: 10px 28px;
+}
+#preview img{
+   width: 100px;
+   height: 100px;
+}
+.upImgBox{
+    margin: 10px 28px;
+    width: 493px;
+    height: 122px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% extends '../layout.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>{% block title %}登录成功 {% endblock %}</title>
+</head>
+{% block content %}
+<body>
+        <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo"><h2>IEEE IV 2018</h2></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="./welcome">文章管理</a></li>
+            <!-- <script>
+                $().ready(function(){
+                    $('#www').click(function(){
+                        window.location.href="/welcome.html"
+                    })
+                })
+            </script> -->
+            <li class="layui-nav-item"><a href="./module">版块管理</a></li>
+            <li class="layui-nav-item" id="myManage-Btn"><a href="./myManage">个人信息管理</a></li>
+            <li class="layui-nav-item"><a href="systemControlp.html">系统管理</a></li>
+            <li class="layui-nav-item"><a href="">退出系统</a></li>
+            <li class="layui-nav-item list-last">
+              <div class="nav-last">
+                  <input type="search" class="ipt-search" placeholder="搜索">
+                  <button class="layui-btn layui-btn-primary search-btn"><i class="fa fa-search"></i></button>
+              </div>
+            </li>
+        </ul>
+
+
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    IEEE IV 2018
+                </a>
+               <!-- <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>-->
+            </li>
+            <li class="layui-nav-item"><a href="">退了</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">发票</a>
+                    <dl class="layui-nav-child">
+                        <!-- <dd id="newsAdd-btn"><a href="javascript:;">添加新闻</a></dd> -->
+                        <dd id="invoice-btn"><a href="javascript:;">发票管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">邀请函</a>
+                    <dl class="layui-nav-child">
+                        <dd id="invitation-btn"><a href="javascript:;">邀请函信息上传</a></dd>
+                        <dd id="invitation-btnmag"><a href="javascript:;">邀请函管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">参会注册信息管理</a>
+                    <dl class="layui-nav-child">
+                        <dd id="reginform"><a href="javascript:;">人员信息管理</a></dd>
+                    </dl>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div class="main-right" style="padding: 15px;">
+           
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        IEEE IV 2018  后台管理系统
+    </div>
+</div>
+</body>
+<script src="../public/js/myManage.js"></script> 
+{% endblock %}
+<script>
+    $(function(){
+           
+    })
+</script>
+</html>
